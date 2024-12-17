@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 3</title>
+    <style>
+        div 
+        {
+            display: inline-block;
+            /* display:flex; */
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(7, 95, 7, 0.627);
+        }
+        .border 
+        {
+            border: 2px solid rgb(221, 19, 19);
+            background-color: rgb(11, 196, 11);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        let square = document.getElementsByTagName("div");
+        document.addEventListener("keydown", function (e) 
+        {
+            if (e.key === "1") 
+            {
+                square[0].classList.add("border");
+            } 
+            else if (e.key === "2") 
+            {
+                square[1].classList.add("border");
+            } 
+            else if (e.key === "3") 
+            {
+                square[2].classList.add("border");
+            } 
+            else if (e.ctrlKey && e.key === "a") 
+            {
+                e.preventDefault();
+                Array.from(square).forEach(square => square.classList.add("border"));
+            } 
+            else if (e.key === "Delete")
+             {
+                Array.from(square).forEach(square => square.classList.remove("border"));
+            }
+        });
+    </script>
+</body>
+</html>
